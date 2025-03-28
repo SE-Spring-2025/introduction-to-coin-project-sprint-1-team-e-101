@@ -4,7 +4,7 @@ public class Dollar extends Coin
 {
     public Dollar()
     {
-        super("Dollar", 1, "IN GOD WE TRUST", "E PLURIBUS UNUM", 
+        super("Dollar", DOLLAR_VALUE, "IN GOD WE TRUST", "E PLURIBUS UNUM", 
                   "LIBERTY", "UNITED STATES OF AMERICA", "S_Anthony", "backImage", 
                   "ONE DOLLAR", true, "", Calendar.getInstance().get(Calendar.YEAR));
     }
