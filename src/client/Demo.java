@@ -64,6 +64,7 @@ public class Demo {
 	    runDemo();
     }
     private static void runDemo() {
+	@SuppressWarnings("unused")
 	Coin c;
 	
 
