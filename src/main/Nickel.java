@@ -6,7 +6,7 @@ public class nickel extends Coin
     {
         super("Nickel", NICKEL_VALUE, "IN GOD WE TRUST", "E PLURIBUS UNUM", 
                   "LIBERTY", "UNITED STATES OF AMERICA", "T_Jefferson", "Jefferson_Memorial", 
-                  "ONE DOLLAR", false, "Cupro-Nickel", Calendar.getInstance().get(Calendar.YEAR));
+                  "FIVE CENTS", false, "Cupro-Nickel", Calendar.getInstance().get(Calendar.YEAR));
     }
 
     public Nickel(int year)
