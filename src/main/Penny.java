@@ -13,6 +13,6 @@ public class Penny extends Coin
     {
         super("Penny", PENNY_VALUE, "IN GOD WE TRUST", "E PLURIBUS UNUM", 
         "LIBERTY", "UNITED STATES OF AMERICA", "A_Lincoln", "Lincoln_Memorial", 
-        "ONE CENTS", false, "Copper", year);
+        "ONE CENT", false, "Copper", year);
     }
 }
