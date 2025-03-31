@@ -18,6 +18,7 @@
     </dependencies>
 
     <build>
+        <testSourceDirectory>${project.basedir}/src/tests</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
