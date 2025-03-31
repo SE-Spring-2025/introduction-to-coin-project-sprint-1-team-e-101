@@ -4,17 +4,46 @@
   <img src="https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/actions/workflows/CoinTest.yml/badge.svg" alt="CoinGenius Build Test">
 </div>
 
+## Usage
+
+To clone the repository, use the following command:
+
+```bash
+git clone https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101.git
+```
+  
+Then, navigate to the project directory:
+
+```bash
+cd introduction-to-coin-project-sprint-1-team-e-101
+```
+
+
+
+To run the Demo application from the command line, follow these steps:
+
+1. Open a terminal and navigate to the project root directory.
+2. Compile the Demo class:
+  > javac -d bin src/client/Demo.java
+3. Execute the compiled Demo class:
+  > java -cp bin client.Demo
+
+Ensure Java is installed and your PATH is set correctly.
+
 ### 👥 Team Members
 - 🌟 [John Kearney](https://github.com/JohnKearney1)
 - 🌟 [Thomas Sang](https://github.com/LalSang402)
 - 🌟 [Jonah Aloian](https://github.com/jsaloian755)
 - 🌟 [William Park](https://github.com/parkwilly)
 
+
 ## 📚 Project Overview
 
 Welcome to **CoinGenius**, your "course-embedded" internship experience! 🎉
 
 CoinGenius LLC is an independent contractor working for the U.S. Treasury Department. Our goal is to innovate and test new processes related to U.S. coinage. Your first task is designed to develop foundational skills and strengthen team collaboration. 💡
+
+The `Coin.java` class seeks to provide an easy, fast handler for converting between common monetary values, and their string representations.
 
 ## 👥 Subteams
 
