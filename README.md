@@ -1,8 +1,16 @@
-# 🪙 CoinGenius - S:101-T:E
 
 <div align="center">
+
+# 🪙 CoinGenius - S:101-T:E
+
   <img src="https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/actions/workflows/CoinTest.yml/badge.svg" alt="CoinGenius Build Test">
-</div>
+
+  ## Automated Testing
+
+This repository supports automatic testing with Github Workflows and a Java CI pipeline. The tests are located in the `src/tests` directory. To run the tests, simply commit, or pull request to the `main` branch. The tests will automatically run, and you can view the results in the Actions tab of the repository.
+
+To view the most recent testing results, click [here](https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/actions/workflows/CoinTest.yml)!
+
 
 ## Usage
 
@@ -29,6 +37,8 @@ To run the Demo application from the command line, follow these steps:
   > java -cp bin client.Demo
 
 Ensure Java is installed and your PATH is set correctly.
+
+
 
 ### 👥 Team Members
 - 🌟 [John Kearney](https://github.com/JohnKearney1)
@@ -104,3 +114,4 @@ The `Coin.java` class seeks to provide an easy, fast handler for converting betw
 
 Happy coding and testing! 🎈🎊
 
+</div>
