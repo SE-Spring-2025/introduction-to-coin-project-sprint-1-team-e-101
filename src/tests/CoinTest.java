@@ -21,7 +21,8 @@ public class CoinTest {
 	// Basically just make sure they don't blow up
 	// parameterless constructor
 	try {
-	    Coin c = new Coin();
+	    @SuppressWarnings("unused")
+		Coin c = new Coin();
 	}
 	catch (Exception e) {
 	    fail("Coin() constructor caused exception: "+e.getMessage());
@@ -29,7 +30,8 @@ public class CoinTest {
 
 	// value arg constructor
 	try {
-	    Coin c = new Coin(0.05);
+	    @SuppressWarnings("unused")
+		Coin c = new Coin(0.05);
 	}
 	catch (Exception e) {
 	    fail("Coin() constructor caused exception: "+e.getMessage());
@@ -37,7 +39,8 @@ public class CoinTest {
 
 	// value and year args constructor
 	try {
-	    Coin c = new Coin(0.10, 2020);
+	    @SuppressWarnings("unused")
+		Coin c = new Coin(0.10, 2020);
 	}
 	catch (Exception e) {
 	    fail("Coin() constructor caused exception: "+e.getMessage());
