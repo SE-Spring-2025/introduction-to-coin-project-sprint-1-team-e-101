@@ -1,4 +1,4 @@
-# 🪙 CoinGenius - 🎯 Section 101 Team E
+# 🪙 CoinGenius - S:101-T:E
 
 <div align="center">
   <img src="https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/actions/workflows/CoinTest.yml/badge.svg" alt="CoinGenius Build Test">
