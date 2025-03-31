@@ -7,6 +7,8 @@ public abstract class Coin {
     public static final double QUARTER_VALUE = 0.25;
     public static final double HALFDOLLAR_VALUE = 0.50;
     public static final double DOLLAR_VALUE = 1.00;
+
+    // Instance variables defining various properties of a coin.
     private String familiarName;
     private double value;
     private String frontMotto;
@@ -37,60 +39,117 @@ public abstract class Coin {
 		this.metallurgy = metallurgy;
 		this.manufactureYear = manufactureYear;
     }
-	
+    
+    // Getter methods for accessing the coin's properties.
+    
+    /**
+     * @return the familiar name of the coin (e.g., "Penny", "Nickel").
+     */
     public String getFamiliarName() {
-	return familiarName;
+        return familiarName;
     }
+    
+    /**
+     * @return the monetary value of the coin.
+     */
     public double getValue() {
-	return value;
+        return value;
     }
+    
+    /**
+     * @return the motto on the front side of the coin.
+     */
     public String getFrontMotto() {
-	return frontMotto;
+        return frontMotto;
     }
+    
+    /**
+     * @return the motto on the back side of the coin.
+     */
     public String getBackMotto() {
-	return backMotto;
+        return backMotto;
     }
+    
+    /**
+     * @return the label on the front side of the coin.
+     */
     public String getFrontLabel() {
-	return frontLabel;
+        return frontLabel;
     }
+    
+    /**
+     * @return the label on the back side of the coin.
+     */
     public String getBackLabel() {
-	return backLabel;
+        return backLabel;
     }
+    
+    /**
+     * @return the identifier for the front image of the coin.
+     */
     public String getFrontImage() {
-	return frontImage;
+        return frontImage;
     }
+    
+    /**
+     * @return the identifier for the back image of the coin.
+     */
     public String getBackImage() {
-	return backImage;
+        return backImage;
     }
+    
+    /**
+     * @return a description of the coin's monetary value.
+     */
     public String getValueDescription() {
-	return valueDescription;
+        return valueDescription;
     }
+    
+    /**
+     * @return true if the coin has a ridged edge; false if the edge is smooth.
+     */
     public boolean getRidgedEdge() {
-	return ridgedEdge;
+        return ridgedEdge;
     }
+    
+    /**
+     * @return the metallurgy of the coin (e.g., "Copper", "Cupro-Nickel").
+     */
     public String getMetallurgy() {
-	return metallurgy;
+        return metallurgy;
     }
+    
+    /**
+     * @return the manufacturing year of the coin.
+     */
     public int getYear() {
-	return manufactureYear;
+        return manufactureYear;
     }
-
+    
+    /**
+     * Returns a string representation of the coin, including its properties such as name,
+     * value, manufacture year, mottos, images, labels, value description, edge type, and metallurgy.
+     *
+     * @return a string describing the coin.
+     */
     public String toString() {
-	DecimalFormat df = new DecimalFormat("0.00");
+        // Format the coin's value to two decimal places.
+        DecimalFormat df = new DecimalFormat("0.00");
         String formattedValue = df.format(value);
-	
-	return "[" + familiarName
-	    + "," + formattedValue
-	    + "," + manufactureYear
-	    + ",'" + frontMotto
-	    + "','" + backMotto
-	    + "','" + frontImage
-	    + "','" + backImage
-	    + "','" + frontLabel
-	    + "','" + backLabel
-	    + "','" + valueDescription
-	    + "'," + (ridgedEdge ? "ridges" : "smooth")
-	    + ",'" + metallurgy
-	    + "']";
+        
+        // Construct and return the string representation of the coin.
+        return "[" + familiarName
+            + "," + formattedValue
+            + "," + manufactureYear
+            + ",'" + frontMotto
+            + "','" + backMotto
+            + "','" + frontImage
+            + "','" + backImage
+            + "','" + frontLabel
+            + "','" + backLabel
+            + "','" + valueDescription
+            + "'," + (ridgedEdge ? "ridges" : "smooth")
+            + ",'" + metallurgy
+            + "']";
     }
 }

@@ -50,6 +50,10 @@ You should frequently push your code to the feature branch on github so the othe
 Because others are pushing frequently, you should correspondingly be "pulling" frequently from the github feature branch. In fact, we'll make it a "rule" that before you push you should pull.
 Direction: Follow the UML in Coin class diagram to  code.
 
+
+#Problem-Faced
+- One of the problem the group faced was the dependency with Junit but after downloading the .jar files required and placing in the lib. To solve this we pushed then to Sprint-1 branch so that others can pull and don't receive the error of missing dependency.
+
 Use the read me file. Document all the steps of your code. 
 Rubric: 
  Grading Rubric
