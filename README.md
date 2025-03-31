@@ -1,68 +1,77 @@
-# Team E
+# 🪙 CoinGenius - 🎯 Section 101 Team E
 
-## Team Members
-- [John Kearney](@JohnKearney1)
-- [Thomas Sang](@LalSang402)
-- [Jonah Aloian](@jsaloian755)
-- [William Park](@parkwilly)
+<div align="center">
+  <img src="https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/actions/workflows/CoinTest.yml/badge.svg" alt="CoinGenius Build Test">
+</div>
 
-## Project Tree  
-```
-    ROOT/  
-    ├─ src/             (contains the source code)  
-    ├─ assets/          (contains an image for the README)  
-    └─ README.md        (this file)  
-```
+### 👥 Team Members
+- 🌟 [John Kearney](https://github.com/JohnKearney1)
+- 🌟 [Thomas Sang](https://github.com/LalSang402)
+- 🌟 [Jonah Aloian](https://github.com/jsaloian755)
+- 🌟 [William Park](https://github.com/parkwilly)
 
-## To Do
+## 📚 Project Overview
 
-**Subteam 1**: John & Thomas  
-**Subteam 2**: Jonah & William  
+Welcome to **CoinGenius**, your "course-embedded" internship experience! 🎉
 
-### Sprint 1
-- [x] Create a feature branch named Sprint 1
-- [ ] Follow the UML in Coin class diagram to code
-![CoinGenius](/assets/Coin-V1-Class.png)
-- [ ] Document all the steps of your code in the README.md file
+CoinGenius LLC is an independent contractor working for the U.S. Treasury Department. Our goal is to innovate and test new processes related to U.S. coinage. Your first task is designed to develop foundational skills and strengthen team collaboration. 💡
 
-### Sprint 2
-- [ ] Push your code to the feature branch on github
-- [ ] Pull frequently from the github feature branch
-- [ ] Peer review the other subteam's code
-- [ ] Respond to the other subteam's pull request
+## 👥 Subteams
 
+- 🔧 **Subteam 1**: John Kearney & Thomas Sang (Code Implementation)
+- 🛠️ **Subteam 2**: Jonah Aloian & William Park (Testing & Peer Review)
 
-## Instructions
-Welcome to CoinGenius, your "course-embedded" internship.
+---
 
-You are an intern at CoinGenius LLC. We are an independent contractor for the U.S. Treasury Department. They want to "test drive" some new aspects of their coinage processes from the ground up and have assigned the project to you and some of your fellow interns. Your first assignment is fairly simple. It focuses on laying the groundwork for the system and getting comfortable working in your team.
+## 📌 Workflow Guidelines
 
-- [x] To get started, have one of your group members create a group and accept the assignment here.
-Then the other group members should follow that same link but join the group created by the first member.
+- 🌿 Create a **feature branch** named `Sprint-n` for each sprint.
+- 🤝 Both subteams collaborate simultaneously on this branch.
+- 🔄 Regularly pull the latest changes from GitHub.
+- ✅ Only push code that compiles. Completion is not required, but functionality is!
+- 🔎 Conduct peer reviews using GitHub pull requests (PR).
+- 💬 Promptly respond to PRs from your peers.
 
-Your team of 3-4 persons will be broken into two subteams. Subteam 1 will work on the "code" part and subteam 2 will work on the "test" part. When subteam 1 is ready for a peer code review they will do a pull request and someone on subteam 2 must respond. Similarly, subteam 2's pull request is to be managed by someone on subteam 1. We will rotate the subteams on the next sprint.
+---
 
+## ✅ Project Tasks
 
-Workflow
-Our team workflow is always to create a "feature branch" first. For our project each feature will be it's own "sprint" (or assignment). Name it Sprint 1
-Both subteams will work on this feature branch together. This means there are likely to be many "conflicts" as other people are adding code (commits) to the branch.
-You should frequently push your code to the feature branch on github so the other team gets those intermediate bits and bytes. Let's just agree to only push code that compiles; but it doesn't have to be completely finished yet.
-Because others are pushing frequently, you should correspondingly be "pulling" frequently from the github feature branch. In fact, we'll make it a "rule" that before you push you should pull.
-Direction: Follow the UML in Coin class diagram to  code.
+### 🚀 Sprint 1
 
+- 🌿 Set up a feature branch named `Sprint-1`.
+- 🖥️ Develop code following the [Coin UML Class Diagram](./assets/Coin-V2-Class.png).
+- 📄 Clearly document all coding steps in the `README.md` file.
 
-#Problem-Faced
-- One of the problem the group faced was the dependency with Junit but after downloading the .jar files required and placing in the lib. To solve this we pushed then to Sprint-1 branch so that others can pull and don't receive the error of missing dependency.
+> See [This](https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/pull/1) Pull Request, and [This](https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/pull/2) Pull Request!
 
-Use the read me file. Document all the steps of your code. 
-Rubric: 
- Grading Rubric
-Correct  Implementation: 40
+### 🚀 Sprint 2
 
-Algorithm Correctness: 15
+- 📤 Regularly push your code to GitHub.
+- 📥 Continuously pull updates from GitHub.
+- 🧐 Peer review code submitted by the other subteam.
+- 🗣️ Respond to pull requests promptly and constructively.
 
-Git instruction: 25
+> See [This](https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/pull/3) Pull Request!
 
-Readme file documentation: 20
+---
 
+## 📝 Grading Rubric
+
+| Criteria                   | Points |
+|----------------------------|--------|
+| ✅ Correct Implementation  | 40     |
+| 🔍 Algorithm Correctness   | 15     |
+| 🌿 Git Compliance          | 25     |
+| 📖 README Documentation    | 20     |
+
+---
+
+## 📂 Additional Resources
+- 📌 [Coin Class Source Code](./src/main/Coin.java)
+- 📌 [Coin Test Source Code](./src/tests/CoinTest.java)
+- 📌 [Demo Application Source Code](./src/client/Demo.java)
+
+---
+
+Happy coding and testing! 🎈🎊
 
