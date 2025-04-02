@@ -6,13 +6,13 @@ public class HalfDollar extends Coin
     {
         super("HalfDollar", HALFDOLLAR_VALUE, "IN GOD WE TRUST", "E PLURIBUS UNUM", 
             "LIBERTY", "UNITED STATES OF AMERICA", "J_Kennedy", "Presidential_Seal", 
-            "HALF DOLLAR", true, "Cupro-Nickel", Calendar.getInstance().get(Calendar.YEAR));
+            "HALF DOLLAR", true, new CuproNickel(), Calendar.getInstance().get(Calendar.YEAR));
     }
 
     public HalfDollar(int year)
     {
         super("HalfDollar", HALFDOLLAR_VALUE, "IN GOD WE TRUST", "E PLURIBUS UNUM", 
             "LIBERTY", "UNITED STATES OF AMERICA", "J_Kennedy", "Presidential_Seal", 
-            "HALF DOLLAR", true, "Cupro-Nickel", year);
+            "HALF DOLLAR", true, new CuproNickel(), year);
     }
 }
