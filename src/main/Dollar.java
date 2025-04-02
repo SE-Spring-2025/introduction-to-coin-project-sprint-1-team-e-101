@@ -6,13 +6,13 @@ public class Dollar extends Coin
     {
         super("Dollar", DOLLAR_VALUE, "IN GOD WE TRUST", "E PLURIBUS UNUM", 
                   "LIBERTY", "UNITED STATES OF AMERICA", "S_Anthony", "Moon_Eagle", 
-                  "ONE DOLLAR", true, "Cupro-Nickel", Calendar.getInstance().get(Calendar.YEAR));
+                  "ONE DOLLAR", true, new CuproNickel(), Calendar.getInstance().get(Calendar.YEAR));
     }
 
     public Dollar(int year)
     {
         super("Dollar", DOLLAR_VALUE, "IN GOD WE TRUST", "E PLURIBUS UNUM", 
         "LIBERTY", "UNITED STATES OF AMERICA", "S_Anthony", "Moon_Eagle", 
-        "ONE DOLLAR", true, "Cupro-Nickel", year);
+        "ONE DOLLAR", true, new CuproNickel(), year);
     }
 }
