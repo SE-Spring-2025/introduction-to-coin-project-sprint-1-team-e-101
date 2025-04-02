@@ -21,10 +21,11 @@ public abstract class Coin {
     private boolean ridgedEdge;
     private String metallurgy;
     private int manufactureYear;
+    private Metallurgy delegator;
     
     public Coin(String familiarName, double value, String frontMotto, String backMotto, String frontLabel, 
 		String backLabel, String frontImage, String backImage, String valueDescription, boolean ridgedEdge, 
-		String metallurgy, int manufactureYear)
+		String metallurgy, Metallurgy delegate, int manufactureYear)
 	{
 		this.familiarName = familiarName;
 		this.value = value;
@@ -37,7 +38,13 @@ public abstract class Coin {
 		this.valueDescription = valueDescription;
 		this.ridgedEdge = ridgedEdge;
 		this.metallurgy = metallurgy;
+        this.delegator = delegator;
 		this.manufactureYear = manufactureYear;
+    }
+
+    public void smelt()
+    {
+        this.metallurgy = delegator.smelt();
     }
     
     // Getter methods for accessing the coin's properties.
