@@ -6,13 +6,13 @@ public class Quarter extends Coin
     {
         super("Quarter", QUARTER_VALUE, "IN GOD WE TRUST", "E PLURIBUS UNUM", 
                   "LIBERTY", "UNITED STATES OF AMERICA", "G_Washington", "Eagle", 
-                  "QUARTER DOLLAR", true, "Cupro-Nickel", Calendar.getInstance().get(Calendar.YEAR));
+                  "QUARTER DOLLAR", true, new CuproNickel(), Calendar.getInstance().get(Calendar.YEAR));
     }
 
     public Quarter(int year)
     {
         super("Quarter", QUARTER_VALUE, "IN GOD WE TRUST", "E PLURIBUS UNUM", 
             "LIBERTY", "UNITED STATES OF AMERICA", "G_Washington", "Eagle", 
-            "QUARTERS DOLLAR", true, "Cupro-Nickel", year);
+            "QUARTERS DOLLAR", true, new CuproNickel(), year);
     }
 }
