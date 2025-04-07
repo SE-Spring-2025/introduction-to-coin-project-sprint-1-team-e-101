@@ -1,4 +1,5 @@
 import java.text.DecimalFormat;
+import java.util.Calendar;
 
 public abstract class Coin {
     public static final double PENNY_VALUE = 0.01;
@@ -8,7 +9,6 @@ public abstract class Coin {
     public static final double HALFDOLLAR_VALUE = 0.50;
     public static final double DOLLAR_VALUE = 1.00;
 
-    // Instance variables defining various properties of a coin.
     private String familiarName;
     private double value;
     private String frontMotto;
@@ -24,126 +24,147 @@ public abstract class Coin {
     private Metallurgy delegator;
     
     public Coin(String familiarName, double value, String frontMotto, String backMotto, String frontLabel, 
-		String backLabel, String frontImage, String backImage, String valueDescription, boolean ridgedEdge, 
-        Metallurgy delegator, int manufactureYear)
-	{
-		this.familiarName = familiarName;
-		this.value = value;
-		this.frontMotto = frontMotto;
-		this.backMotto = backMotto;
-		this.frontLabel = frontLabel;
-		this.backLabel = backLabel;
-		this.frontImage = frontImage;
-		this.backImage = backImage;
-		this.valueDescription = valueDescription;
-		this.ridgedEdge = ridgedEdge;
+                String backLabel, String frontImage, String backImage, String valueDescription, boolean ridgedEdge, 
+                Metallurgy delegator, int manufactureYear) {
+        this.familiarName = familiarName;
+        this.value = value;
+        this.frontMotto = frontMotto;
+        this.backMotto = backMotto;
+        this.frontLabel = frontLabel;
+        this.backLabel = backLabel;
+        this.frontImage = frontImage;
+        this.backImage = backImage;
+        this.valueDescription = valueDescription;
+        this.ridgedEdge = ridgedEdge;
         this.delegator = delegator;
-		this.manufactureYear = manufactureYear;
+        this.manufactureYear = manufactureYear;
+        smelt();
     }
-
-    public void smelt()
-    {
+    
+    public Coin() {
+        this(PENNY_VALUE, Calendar.getInstance().get(Calendar.YEAR));
+    }
+    
+    public Coin(double value) {
+        this(value, Calendar.getInstance().get(Calendar.YEAR));
+    }
+    
+    public Coin(double value, int year) {
+        this.value = value;
+        this.manufactureYear = year;
+        this.frontMotto = "IN GOD WE TRUST";
+        this.backMotto = "E PLURIBUS UNUM";
+        this.frontLabel = "LIBERTY";
+        this.backLabel = "UNITED STATES OF AMERICA";
+        
+        if (Math.abs(value - PENNY_VALUE) < 0.00001) {
+            this.familiarName = "Penny";
+            this.frontImage = "A_Lincoln";
+            this.backImage = "Lincoln_Memorial";
+            this.valueDescription = "ONE CENT";
+            this.ridgedEdge = false;
+            this.delegator = new Copper();
+        } else if (Math.abs(value - NICKEL_VALUE) < 0.00001) {
+            this.familiarName = "Nickel";
+            this.frontImage = "T_Jefferson";
+            this.backImage = "Jefferson_Memorial";
+            this.valueDescription = "FIVE CENTS";
+            this.ridgedEdge = false;
+            this.delegator = new CuproNickel();
+        } else if (Math.abs(value - DIME_VALUE) < 0.00001) {
+            this.familiarName = "Dime";
+            this.frontImage = "F_Roosevelt";
+            this.backImage = "Torch_Branches";
+            this.valueDescription = "ONE DIME";
+            this.ridgedEdge = true;
+            this.delegator = new CuproNickel();
+        } else if (Math.abs(value - QUARTER_VALUE) < 0.00001) {
+            this.familiarName = "Quarter";
+            this.frontImage = "G_Washington";
+            this.backImage = "Eagle";
+            this.valueDescription = "QUARTER DOLLAR";
+            this.ridgedEdge = true;
+            this.delegator = new CuproNickel();
+        } else if (Math.abs(value - HALFDOLLAR_VALUE) < 0.00001) {
+            this.familiarName = "HalfDollar";
+            this.frontImage = "J_Kennedy";
+            this.backImage = "Presidential_Seal";
+            this.valueDescription = "HALF DOLLAR";
+            this.ridgedEdge = true;
+            this.delegator = new CuproNickel();
+        } else if (Math.abs(value - DOLLAR_VALUE) < 0.00001) {
+            this.familiarName = "Dollar";
+            this.frontImage = "S_Anthony";
+            this.backImage = "Moon_Eagle";
+            this.valueDescription = "ONE DOLLAR";
+            this.ridgedEdge = true;
+            this.delegator = new CuproNickel();
+        } else {
+            this.familiarName = "Generic";
+            this.frontImage = "Generic_Front";
+            this.backImage = "Generic_Back";
+            this.valueDescription = String.valueOf(value);
+            this.ridgedEdge = false;
+            this.delegator = new CuproNickel();
+        }
+        smelt();
+    }
+    
+    public void smelt() {
         this.metallurgy = delegator.smelt();
     }
     
-    // Getter methods for accessing the coin's properties.
-    
-    /**
-     * @return the familiar name of the coin (e.g., "Penny", "Nickel").
-     */
     public String getFamiliarName() {
         return familiarName;
     }
     
-    /**
-     * @return the monetary value of the coin.
-     */
     public double getValue() {
         return value;
     }
     
-    /**
-     * @return the motto on the front side of the coin.
-     */
     public String getFrontMotto() {
         return frontMotto;
     }
     
-    /**
-     * @return the motto on the back side of the coin.
-     */
     public String getBackMotto() {
         return backMotto;
     }
     
-    /**
-     * @return the label on the front side of the coin.
-     */
     public String getFrontLabel() {
         return frontLabel;
     }
     
-    /**
-     * @return the label on the back side of the coin.
-     */
     public String getBackLabel() {
         return backLabel;
     }
     
-    /**
-     * @return the identifier for the front image of the coin.
-     */
     public String getFrontImage() {
         return frontImage;
     }
     
-    /**
-     * @return the identifier for the back image of the coin.
-     */
     public String getBackImage() {
         return backImage;
     }
     
-    /**
-     * @return a description of the coin's monetary value.
-     */
     public String getValueDescription() {
         return valueDescription;
     }
     
-    /**
-     * @return true if the coin has a ridged edge; false if the edge is smooth.
-     */
     public boolean getRidgedEdge() {
         return ridgedEdge;
     }
     
-    /**
-     * @return the metallurgy of the coin (e.g., "Copper", "Cupro-Nickel").
-     */
     public String getMetallurgy() {
         return metallurgy;
     }
     
-    /**
-     * @return the manufacturing year of the coin.
-     */
     public int getYear() {
         return manufactureYear;
     }
     
-    /**
-     * Returns a string representation of the coin, including its properties such as name,
-     * value, manufacture year, mottos, images, labels, value description, edge type, and metallurgy.
-     *
-     * @return a string describing the coin.
-     */
     public String toString() {
-        // Format the coin's value to two decimal places.
         DecimalFormat df = new DecimalFormat("0.00");
         String formattedValue = df.format(value);
-        
-        // Construct and return the string representation of the coin.
         return "[" + familiarName
             + "," + formattedValue
             + "," + manufactureYear
