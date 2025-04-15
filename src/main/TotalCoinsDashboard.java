@@ -1,3 +1,8 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
 public class TotalCoinsDashboard extends JFrame implements Observer
 {
     private JLabel label;
