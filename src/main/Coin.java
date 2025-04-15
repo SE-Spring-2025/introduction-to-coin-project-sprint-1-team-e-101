@@ -22,6 +22,9 @@ public abstract class Coin {
     private String metallurgy;
     private int manufactureYear;
     private Metallurgy delegator;
+
+    protected static CoinCounts coinCounter = new CointCounts();
+
     
     public Coin(String familiarName, double value, String frontMotto, String backMotto, String frontLabel, 
 		String backLabel, String frontImage, String backImage, String valueDescription, boolean ridgedEdge, 
@@ -40,6 +43,7 @@ public abstract class Coin {
         this.delegator = delegator;
 		this.manufactureYear = manufactureYear;
     }
+
 
     public void smelt()
     {
@@ -130,6 +134,11 @@ public abstract class Coin {
      */
     public int getYear() {
         return manufactureYear;
+    }
+
+    public static CoinCounts getCoinCounter()
+    {
+        return coinCounter;
     }
     
     /**
