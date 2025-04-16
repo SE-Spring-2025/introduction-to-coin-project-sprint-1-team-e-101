@@ -2,7 +2,7 @@ name: Java CI
 
 on:
   push:
-    branches: [ main, Sprint-3 ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 

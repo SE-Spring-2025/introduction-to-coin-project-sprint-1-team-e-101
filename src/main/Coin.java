@@ -44,11 +44,6 @@ public abstract class Coin {
         smelt();
     }
   
-    public void smelt()
-    {
-        this.metallurgy = delegator.smelt();
-    }
-    
     public Coin(double value) {
         this(value, Calendar.getInstance().get(Calendar.YEAR));
     }
