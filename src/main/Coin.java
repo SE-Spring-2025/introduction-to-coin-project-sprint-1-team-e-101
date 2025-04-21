@@ -1,196 +1,132 @@
-import java.util.Calendar;
 import java.text.DecimalFormat;
 
-public class Coin 
-{
-	private double value;
-	private String commonName;
-	private String frontMotto;
-	private String backMotto;
-	private String frontLabel;
-	private String backLabel;
-	private String metallurgy;
-	private boolean ridgedEdge;
-	
+public abstract class Coin {
 	public static final double PENNY_VALUE = 0.01;
 	public static final double NICKEL_VALUE = 0.05;
 	public static final double DIME_VALUE = 0.10;
 	public static final double QUARTER_VALUE = 0.25;
 	public static final double HALFDOLLAR_VALUE = 0.50;
 	public static final double DOLLAR_VALUE = 1.00;
-	private String familiarName;
-	private String frontImage;
-	private String backImage;
-	private String valueDescription;
 
-	
-	private int manufactureYear;
-	
-	public Coin() 
-	{
-		this(0);
-	}
-	
-	public Coin(double value) 
-	{
-		this(value, (Calendar.getInstance()).get(Calendar.YEAR));
-	}
-	
-	public Coin(double value, int year) 
-	{
-	
-		if (cmpDoubles(value, PENNY_VALUE)) 
-		{
-			familiarName = "Penny";
-			frontImage = "A_Lincoln";
-			backImage = "Lincoln_Memorial";
-			valueDescription = "ONE CENT";
-			ridgedEdge = false;
-			metallurgy = "Copper";
-		}
-	
-		else if (cmpDoubles(value, NICKEL_VALUE)) 
-		{
-			familiarName = "Nickel";
-			frontImage = "T_Jefferson";
-			backImage = "Jefferson_Memorial";
-			valueDescription = "FIVE CENTS";
-			ridgedEdge = false;
-			metallurgy = "Cupro-Nickel";
-		}
-	
-		else if (cmpDoubles(value, DIME_VALUE)) 
-		{
-			familiarName = "Dime";
-			frontImage = "F_Roosevelt";
-			backImage = "Torch_Branches";
-			valueDescription = "ONE DIME";
-			ridgedEdge = true;
-			metallurgy = "Cupro-Nickel";
-		}
-	
-		else if (cmpDoubles(value, QUARTER_VALUE)) 
-		{
-			familiarName = "Quarter";
-			frontImage = "G_Washington";
-			backImage = "Eagle";
-			valueDescription = "QUARTER DOLLAR";
-			ridgedEdge = true;
-			metallurgy = "Cupro-Nickel";
-		}
-	
-		else if (cmpDoubles(value, HALFDOLLAR_VALUE)) 
-		{
-			familiarName = "HalfDollar";
-			frontImage = "J_Kennedy";
-			backImage = "Presidential_Seal";
-			valueDescription = "HALF DOLLAR";
-			ridgedEdge = true;
-			metallurgy = "Cupro-Nickel";
-		}
-	
-		else if (cmpDoubles(value, DOLLAR_VALUE)) 
-		{
-			familiarName = "Dollar";
-			frontImage = "S_Anthony";
-			backImage = "Moon_Eagle";
-			valueDescription = "ONE DOLLAR";
-			ridgedEdge = true;
-			metallurgy = "Cupro-Nickel";
-		}
-	
-		else value = 0;
-	
+	private final String familiarName;
+	private final double value;
+	private final String frontMotto;
+	private final String backMotto;
+	private final String frontLabel;
+	private final String backLabel;
+	private final String frontImage;
+	private final String backImage;
+	private final String valueDescription;
+	private final boolean ridgedEdge;
+	private final Metallurgy metallurgy;
+	private final int manufactureYear;
+
+	/**
+	 * @param familiarName     e.g. "Quarter"
+	 * @param value            e.g. 0.25
+	 * @param frontMotto       e.g. "IN GOD WE TRUST"
+	 * @param backMotto        e.g. "E PLURIBUS UNUM"
+	 * @param frontLabel       e.g. "LIBERTY"
+	 * @param backLabel        e.g. "UNITED STATES OF AMERICA"
+	 * @param frontImage       e.g. "G_Washington"
+	 * @param backImage        e.g. "Eagle"
+	 * @param valueDescription e.g. "QUARTER DOLLAR"
+	 * @param ridgedEdge       true if edge is ridged
+	 * @param metallurgy       a Metallurgy implementation
+	 * @param manufactureYear  year minted
+	 */
+	protected Coin(
+			String familiarName,
+			double value,
+			String frontMotto,
+			String backMotto,
+			String frontLabel,
+			String backLabel,
+			String frontImage,
+			String backImage,
+			String valueDescription,
+			boolean ridgedEdge,
+			Metallurgy metallurgy,
+			int manufactureYear) {
+		this.familiarName = familiarName;
 		this.value = value;
-		this.manufactureYear = year;
-	
-		frontMotto = "IN GOD WE TRUST";
-		backMotto = "E PLURIBUS UNUM";
-		frontLabel = "LIBERTY";
-		backLabel = "UNITED STATES OF AMERICA";
-	
+		this.frontMotto = frontMotto;
+		this.backMotto = backMotto;
+		this.frontLabel = frontLabel;
+		this.backLabel = backLabel;
+		this.frontImage = frontImage;
+		this.backImage = backImage;
+		this.valueDescription = valueDescription;
+		this.ridgedEdge = ridgedEdge;
+		this.metallurgy = metallurgy;
+		this.manufactureYear = manufactureYear;
 	}
-	
-	private boolean cmpDoubles(double a, double b) 
-	{
-		return Math.abs(a-b) < 0.00001;
-	}
-	
-	public String getFamiliarName() 
-	{
+
+	// --- getters ---
+	public String getFamiliarName() {
 		return familiarName;
 	}
-	
-	public double getValue() 
-	{
+
+	public double getValue() {
 		return value;
 	}
-	
-	public String getFrontMotto() 
-	{
+
+	public String getFrontMotto() {
 		return frontMotto;
 	}
-	
-	public String getBackMotto() 
-	{
+
+	public String getBackMotto() {
 		return backMotto;
 	}
-	
-	public String getFrontLabel() 
-	{
+
+	public String getFrontLabel() {
 		return frontLabel;
 	}
-	
-	public String getBackLabel() 
-	{
+
+	public String getBackLabel() {
 		return backLabel;
 	}
-	
-	public String getFrontImage() 
-	{
+
+	public String getFrontImage() {
 		return frontImage;
 	}
-	
-	public String getBackImage() 
-	{
+
+	public String getBackImage() {
 		return backImage;
 	}
-	
-	public String getValueDescription() 
-	{
+
+	public String getValueDescription() {
 		return valueDescription;
 	}
-	public boolean getRidgedEdge() 
-	{
+
+	public boolean hasRidgedEdge() {
 		return ridgedEdge;
 	}
-	public String getMetallurgy() 
-	{
-		return metallurgy;
+
+	public String getMetallurgy() {
+		return metallurgy.smelt();
 	}
-	
-	public int getYear() 
-	{
+
+	public int getYear() {
 		return manufactureYear;
 	}
-	
-	public String toString() 
-	{
+
+	@Override
+	public String toString() {
 		DecimalFormat df = new DecimalFormat("0.00");
-		String formattedValue = df.format(value);
-	
-		return "[" + familiarName
-			+ "," + formattedValue
-			+ "," + manufactureYear
-			+ ",'" + frontMotto
-			+ "','" + backMotto
-			+ "','" + frontImage
-			+ "','" + backImage
-			+ "','" + frontLabel
-			+ "','" + backLabel
-			+ "','" + valueDescription
-			+ "'," + (ridgedEdge ? "ridges" : "smooth")
-			+ ",'" + metallurgy
-			+ "']";
-		}
+		return String.format(
+				"[%s, %s, %d, '%s', '%s', '%s', '%s', '%s', '%s', %s, '%s']",
+				familiarName,
+				df.format(value),
+				manufactureYear,
+				frontMotto,
+				backMotto,
+				frontImage,
+				backImage,
+				frontLabel,
+				backLabel,
+				valueDescription,
+				ridgedEdge ? "ridges" : "smooth",
+				getMetallurgy());
+	}
 }
