@@ -3,7 +3,7 @@
 
 # 🪙 CoinGenius - S:101-T:E
 
-## Usage
+## 🚀 Usage
 
 To clone the repository, use the following command:
 
@@ -17,18 +17,30 @@ Then, navigate to the project directory:
 cd introduction-to-coin-project-sprint-1-team-e-101
 ```
 
-
-
-To run the Demo application from the command line, follow these steps:
+## 🛠️ Build and Run Instructions
 
 1. Open a terminal and navigate to the project root directory.
-2. Compile the Demo class:
-  > javac -d bin src/client/Demo.java
-3. Execute the compiled Demo class:
-  > java -cp bin client.Demo
+```bash
+cd introduction-to-coin-project-sprint-1-team-e-101
+```
 
-Ensure Java is installed and your PATH is set correctly.
 
+2. Make an output directory for .class files (`bin`)
+```bash
+mkdir -p bin
+```
+
+
+3. Compile every .java in src/main and src/client into `bin`:
+```bash
+javac -d bin src/main/*.java src/client/*.java
+```
+
+
+4. Tell Java to look in `bin` for .class files and run the Demo:
+```bash
+java -cp bin Demo
+```
 
 
 ### 👥 Team Members
