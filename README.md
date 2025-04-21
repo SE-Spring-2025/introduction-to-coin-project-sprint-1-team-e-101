@@ -1,7 +1,22 @@
 
-<div align="center">
+<!-- <div align="center"> -->
 
 # 🪙 CoinGenius - S:101-T:E
+
+- 🌟 [John Kearney](https://github.com/JohnKearney1)
+- 🌟 [Thomas Sang](https://github.com/LalSang402)
+- 🌟 [Jonah Aloian](https://github.com/jsaloian755)
+- 🌟 [William Park](https://github.com/parkwilly)
+
+
+
+## 📚 Project Overview
+
+Welcome to **CoinGenius**, your "course-embedded" internship experience! 🎉
+
+CoinGenius LLC is an independent contractor working for the U.S. Treasury Department. Our goal is to innovate and test new processes related to U.S. coinage. Your first task is designed to develop foundational skills and strengthen team collaboration. 💡
+
+The `Coin.java` class seeks to provide an easy, fast handler for converting between common monetary values, and their string representations.
 
 ## 🚀 Usage
 
@@ -43,23 +58,7 @@ java -cp bin Demo
 ```
 
 
-### 👥 Team Members
-- 🌟 [John Kearney](https://github.com/JohnKearney1)
-- 🌟 [Thomas Sang](https://github.com/LalSang402)
-- 🌟 [Jonah Aloian](https://github.com/jsaloian755)
-- 🌟 [William Park](https://github.com/parkwilly)
-
-
-## 📚 Project Overview
-
-Welcome to **CoinGenius**, your "course-embedded" internship experience! 🎉
-
-CoinGenius LLC is an independent contractor working for the U.S. Treasury Department. Our goal is to innovate and test new processes related to U.S. coinage. Your first task is designed to develop foundational skills and strengthen team collaboration. 💡
-
-The `Coin.java` class seeks to provide an easy, fast handler for converting between common monetary values, and their string representations.
-
 ## 👥 Subteams
-
 - 🔧 **Subteam 1**: John Kearney & Thomas Sang (Code Implementation)
 - 🛠️ **Subteam 2**: Jonah Aloian & William Park (Testing & Peer Review)
 
@@ -111,6 +110,17 @@ The `Coin.java` class seeks to provide an easy, fast handler for converting betw
 
 > See [This](https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/pull/9) Pull Request!
 
+
+### 🚀 Sprint 5
+
+- 🧐 Implement Coinage!
+- 🖥️ New JUnit tests.
+- 🖥️ Updated Demo Class
+- 🖥️ Updated README
+- 🖥️ Automated Testing!
+
+> See [This](https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/pull/10) Pull Request!
+
 ---
 
 ## 📝 Grading Rubric
@@ -133,4 +143,4 @@ The `Coin.java` class seeks to provide an easy, fast handler for converting betw
 
 Happy coding and testing! 🎈🎊
 
-</div>
+<!-- </div> -->
