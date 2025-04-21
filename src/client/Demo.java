@@ -12,7 +12,7 @@ public class Demo {
 		SwingUtilities.invokeLater(totalDash);
 		SwingUtilities.invokeLater(quarterDash);
 		try {
-			Thread.sleep(1000); // wait for dashboards to be ready
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -20,7 +20,10 @@ public class Demo {
 		blankLines();
 		System.out.println("Welcome to the Coin Demo!");
 
-		fixedDemo();
+		metallurgyDemo();
+		blankLines();
+		manufacturingWorkflow();
+		blankLines();
 		interactiveDemo();
 
 		blankLines();
@@ -29,9 +32,9 @@ public class Demo {
 		blankLines();
 	}
 
-	private static void fixedDemo() {
+	private static void metallurgyDemo() {
 		blankLines();
-		System.out.println("===Metallurgy Demo ===");
+		System.out.println("=== Metallurgy Demo ===");
 		System.out.println("Penny (Cupro-Nickel): " + new Penny(new CuproNickel()));
 		System.out.println("Nickel (Cupro-Nickel):       " + new Nickel(new CuproNickel()));
 		System.out.println("Dime (Cupro-Nickel):         " + new Dime(new CuproNickel()));
@@ -39,6 +42,40 @@ public class Demo {
 		System.out.println("HalfDollar (Cupro-Nickel):   " + new HalfDollar(new CuproNickel()));
 		System.out.println("Dollar default:       " + new Dollar());
 		System.out.println("Dollar (1991):        " + new Dollar(1991));
+		System.out.println("Dollar (Cupro-Nickel):       " + new Dollar(new CuproNickel()));
+		System.out.println("Dollar (Cupro-Nickel, 1991): " + new Dollar(new CuproNickel(), 1991));
+		System.out.println("=== End of Metallurgy Demo ===");
+	}
+
+	private static void manufacturingWorkflow() {
+		Penny penny = new Penny(new CuproNickel());
+		penny.manufacture(penny);
+
+		Nickel nickel = new Nickel(new CuproNickel());
+		nickel.manufacture(nickel);
+
+		Dime dime = new Dime(new CuproNickel());
+		dime.manufacture(dime);
+
+		Quarter quarter = new Quarter(new CuproNickel());
+		quarter.manufacture(quarter);
+
+		HalfDollar halfDollar = new HalfDollar(new CuproNickel());
+		halfDollar.manufacture(halfDollar);
+
+		Dollar dollar = new Dollar(new CuproNickel());
+		dollar.manufacture(dollar);
+
+		System.out.println("=== Manufacturing Workflow Demo ===");
+		System.out.println("Penny: " + penny);
+		System.out.println("Nickel: " + nickel);
+		System.out.println("Dime: " + dime);
+		System.out.println("Quarter: " + quarter);
+		System.out.println("HalfDollar: " + halfDollar);
+		System.out.println("Dollar: " + dollar);
+		System.out.println("=== End of Manufacturing Workflow Demo ===");
+		blankLines();
+
 	}
 
 	private static void interactiveDemo() {

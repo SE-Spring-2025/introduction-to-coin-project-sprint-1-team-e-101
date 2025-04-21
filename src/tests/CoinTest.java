@@ -5,7 +5,7 @@ public class CoinTest {
 
 	private final Coin testCoin = new MockCoin();
 
-	// a tiny concrete subclass so we can instantiate Coin
+	// a minimal concrete subclass so we can instantiate Coin
 	private static class MockCoin extends Coin {
 		public MockCoin() {
 			super(
@@ -28,6 +28,36 @@ public class CoinTest {
 					1788 // manufactureYear
 			);
 		}
+
+		@Override
+		protected Coin smelt(Coin in) {
+			return in;
+		}
+
+		@Override
+		protected Coin ridge(Coin in) {
+			return in;
+		}
+
+		@Override
+		protected Coin imprintFrontImage(Coin in) {
+			return in;
+		}
+
+		@Override
+		protected Coin imprintFrontMotto(Coin in) {
+			return in;
+		}
+
+		@Override
+		protected Coin imprintBackImage(Coin in) {
+			return in;
+		}
+
+		@Override
+		protected Coin imprintBackMotto(Coin in) {
+			return in;
+		}
 	}
 
 	@Test
@@ -44,5 +74,23 @@ public class CoinTest {
 		assertFalse(testCoin.hasRidgedEdge());
 		assertEquals("metallurgy", testCoin.getMetallurgy());
 		assertEquals(1788, testCoin.getYear());
+	}
+
+	@Test
+	void testFlagsBeforeManufacture() {
+		// Before calling manufacture, flags should be false
+		assertFalse(testCoin.isFlipped(), "should start unflipped");
+		assertFalse(testCoin.isBuffed(), "should start unbuffed");
+	}
+
+	@Test
+	void testManufactureSetsFlags() {
+		// manufacture(...) should return the same instance
+		Coin result = testCoin.manufacture(testCoin);
+		assertSame(testCoin, result, "manufacture should return the same coin instance");
+
+		// After manufacturing, both flags must be true
+		assertTrue(testCoin.isFlipped(), "manufacture must flip the coin");
+		assertTrue(testCoin.isBuffed(), "manufacture must buff the coin");
 	}
 }

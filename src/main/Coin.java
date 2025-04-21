@@ -1,3 +1,4 @@
+
 import java.text.DecimalFormat;
 
 public abstract class Coin {
@@ -20,22 +21,14 @@ public abstract class Coin {
 	private final boolean ridgedEdge;
 	private final Metallurgy metallurgy;
 	private final int manufactureYear;
-	protected static final CoinCounts COUNTS = new CoinCounts(); // shared by all coins
 
-	/**
-	 * @param familiarName     e.g. "Quarter"
-	 * @param value            e.g. 0.25
-	 * @param frontMotto       e.g. "IN GOD WE TRUST"
-	 * @param backMotto        e.g. "E PLURIBUS UNUM"
-	 * @param frontLabel       e.g. "LIBERTY"
-	 * @param backLabel        e.g. "UNITED STATES OF AMERICA"
-	 * @param frontImage       e.g. "G_Washington"
-	 * @param backImage        e.g. "Eagle"
-	 * @param valueDescription e.g. "QUARTER DOLLAR"
-	 * @param ridgedEdge       true if edge is ridged
-	 * @param metallurgy       a Metallurgy implementation
-	 * @param manufactureYear  year minted
-	 */
+	// Flags for manufacturing steps
+	private boolean flipped = false;
+	private boolean buffed = false;
+
+	// Counts dashboard (now private)
+	private static final CoinCounts COUNTS = new CoinCounts();
+
 	protected Coin(
 			String familiarName,
 			double value,
@@ -62,10 +55,57 @@ public abstract class Coin {
 		this.metallurgy = metallurgy;
 		this.manufactureYear = manufactureYear;
 		COUNTS.increment(familiarName);
-		;
 	}
 
-	// --- getters ---
+	// --- Template method ---
+	/** Runs the full manufacturing workflow on the given “blob.” */
+	public final Coin manufacture(Coin c0) {
+		Coin c1 = smelt(c0);
+		Coin c2 = ridge(c1);
+		Coin c3 = imprintFrontImage(c2);
+		Coin c4 = imprintFrontMotto(c3);
+		Coin c5 = flip(c4);
+		Coin c6 = imprintBackImage(c5);
+		Coin c7 = imprintBackMotto(c6);
+		Coin c8 = buff(c7);
+		return c8;
+	}
+
+	// --- Abstract steps for subclasses ---
+	protected abstract Coin smelt(Coin in);
+
+	protected abstract Coin ridge(Coin in);
+
+	protected abstract Coin imprintFrontImage(Coin in);
+
+	protected abstract Coin imprintFrontMotto(Coin in);
+
+	protected abstract Coin imprintBackImage(Coin in);
+
+	protected abstract Coin imprintBackMotto(Coin in);
+
+	// --- Default concrete steps ---
+	protected final Coin flip(Coin in) {
+		in.flipped = true;
+		System.out.println("🔄 Flipped the coin.");
+		return in;
+	}
+
+	protected final Coin buff(Coin in) {
+		in.buffed = true;
+		System.out.println("✨ Buffed the coin to smooth finish.");
+		return in;
+	}
+
+	// --- Getters for flags & metadata ---
+	public boolean isFlipped() {
+		return flipped;
+	}
+
+	public boolean isBuffed() {
+		return buffed;
+	}
+
 	public String getFamiliarName() {
 		return familiarName;
 	}
@@ -122,7 +162,7 @@ public abstract class Coin {
 	public String toString() {
 		DecimalFormat df = new DecimalFormat("0.00");
 		return String.format(
-				"[%s, %s, %d, '%s', '%s', '%s', '%s', '%s', '%s', %s, '%s']",
+				"[%s, %s, %d, '%s', '%s', '%s', '%s', '%s', '%s', %s, '%s', flipped=%b, buffed=%b]",
 				familiarName,
 				df.format(value),
 				manufactureYear,
@@ -134,6 +174,8 @@ public abstract class Coin {
 				backLabel,
 				valueDescription,
 				ridgedEdge ? "ridges" : "smooth",
-				getMetallurgy());
+				getMetallurgy(),
+				flipped,
+				buffed);
 	}
 }
