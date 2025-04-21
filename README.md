@@ -72,7 +72,7 @@ The `Coin.java` class seeks to provide an easy, fast handler for converting betw
 - 🖥️ Develop code following the [Coin UML Class Diagram](./assets/Coin-V2-Class.png).
 - 📄 Clearly document all coding steps in the `README.md` file.
 
-> See [This](https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/pull/1) Pull Request, and [This](https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/pull/2) Pull Request!
+> See [This](https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/pull/6) Pull Request!
 
 ### 🚀 Sprint 2
 
@@ -81,13 +81,24 @@ The `Coin.java` class seeks to provide an easy, fast handler for converting betw
 - 🧐 Peer review code submitted by the other subteam.
 - 🗣️ Respond to pull requests promptly and constructively.
 
-> See [This](https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/pull/3) Pull Request!
+> See [This](https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/pull/7) Pull Request!
 
 ### 🚀 Sprint 3
 
 - 🔄 Refactors and implements Metallurgy.
 - 🖥️ New JUnit tests.
 - 🖥️ Updated Demo Class
+
+> See [This](https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/pull/8) Pull Request!
+
+### 🚀 Sprint 4
+
+- 🧐 Implement Dashboards!
+- 🖥️ New JUnit tests.
+- 🖥️ Updated Demo Class
+
+> See [This](https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/pull/9) Pull Request!
+
 ---
 
 ## 📝 Grading Rubric
