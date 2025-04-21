@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src/client"/>
+	<classpathentry kind="src" path="src/main"/>
+	<classpathentry kind="src" path="src/tests"/>
+	<classpathentry kind="lib" path="lib/checkstyle-10.18.1-all.jar"/>
+	<classpathentry kind="lib" path="lib/junit-platform-console-standalone-1.11.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

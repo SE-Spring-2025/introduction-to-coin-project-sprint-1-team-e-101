@@ -1,0 +1,14 @@
+# VSCode settings
+.vscode/
+
+# Mac-specific Finder settings
+.DS_Store
+
+# Java class files should be re-generated when needed
+/**/*.class
+
+# emacs backup files
+/*~
+/**/*~
+
+/bin/
