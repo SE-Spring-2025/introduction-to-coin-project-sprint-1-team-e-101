@@ -1,17 +1,15 @@
 import java.util.Calendar;
 
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 public class CoinTest {
     private static int currYear;
     
-    @BeforeClass
+    @BeforeAll
     public static void getCurrYear() {
 	currYear = (Calendar.getInstance()).get(Calendar.YEAR);
     }
@@ -21,8 +19,7 @@ public class CoinTest {
 	// Basically just make sure they don't blow up
 	// parameterless constructor
 	try {
-	    @SuppressWarnings("unused")
-		Coin c = new Coin();
+	    Coin c = new Coin();
 	}
 	catch (Exception e) {
 	    fail("Coin() constructor caused exception: "+e.getMessage());
@@ -30,8 +27,7 @@ public class CoinTest {
 
 	// value arg constructor
 	try {
-	    @SuppressWarnings("unused")
-		Coin c = new Coin(0.05);
+	    Coin c = new Coin(0.05);
 	}
 	catch (Exception e) {
 	    fail("Coin() constructor caused exception: "+e.getMessage());
@@ -39,8 +35,7 @@ public class CoinTest {
 
 	// value and year args constructor
 	try {
-	    @SuppressWarnings("unused")
-		Coin c = new Coin(0.10, 2020);
+	    Coin c = new Coin(0.10, 2020);
 	}
 	catch (Exception e) {
 	    fail("Coin() constructor caused exception: "+e.getMessage());

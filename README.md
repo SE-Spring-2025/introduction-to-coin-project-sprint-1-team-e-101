@@ -1,4 +1,3 @@
-
 <div align="center">
 
 # 🪙 CoinGenius - S:101-T:E
