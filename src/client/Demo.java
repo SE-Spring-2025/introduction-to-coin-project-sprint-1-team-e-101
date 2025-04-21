@@ -18,12 +18,12 @@ public class Demo {
 
 	private static void fixedDemo() {
 		blankLines();
-		System.out.println("=== Fixed Demo ===");
-		System.out.println("Penny default:        " + new Penny());
-		System.out.println("Nickel default:       " + new Nickel());
-		System.out.println("Dime default:         " + new Dime());
-		System.out.println("Quarter default:      " + new Quarter());
-		System.out.println("HalfDollar default:   " + new HalfDollar());
+		System.out.println("===Metallurgy Demo ===");
+		System.out.println("Penny (Cupro-Nickel): " + new Penny(new CuproNickel()));
+		System.out.println("Nickel (Cupro-Nickel):       " + new Nickel(new CuproNickel()));
+		System.out.println("Dime (Cupro-Nickel):         " + new Dime(new CuproNickel()));
+		System.out.println("Quarter (Cupro-Nickel):      " + new Quarter(new CuproNickel()));
+		System.out.println("HalfDollar (Cupro-Nickel):   " + new HalfDollar(new CuproNickel()));
 		System.out.println("Dollar default:       " + new Dollar());
 		System.out.println("Dollar (1991):        " + new Dollar(1991));
 	}
