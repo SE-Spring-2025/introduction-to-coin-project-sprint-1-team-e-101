@@ -83,6 +83,11 @@ The `Coin.java` class seeks to provide an easy, fast handler for converting betw
 
 > See [This](https://github.com/SE-Spring-2025/introduction-to-coin-project-sprint-1-team-e-101/pull/3) Pull Request!
 
+### 🚀 Sprint 3
+
+- 🔄 Refactors and implements Metallurgy.
+- 🖥️ New JUnit tests.
+- 🖥️ Updated Demo Class
 ---
 
 ## 📝 Grading Rubric
