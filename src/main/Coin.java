@@ -20,6 +20,7 @@ public abstract class Coin {
 	private final boolean ridgedEdge;
 	private final Metallurgy metallurgy;
 	private final int manufactureYear;
+	protected static final CoinCounts COUNTS = new CoinCounts(); // shared by all coins
 
 	/**
 	 * @param familiarName     e.g. "Quarter"
@@ -60,6 +61,8 @@ public abstract class Coin {
 		this.ridgedEdge = ridgedEdge;
 		this.metallurgy = metallurgy;
 		this.manufactureYear = manufactureYear;
+		COUNTS.increment(familiarName);
+		;
 	}
 
 	// --- getters ---
@@ -109,6 +112,10 @@ public abstract class Coin {
 
 	public int getYear() {
 		return manufactureYear;
+	}
+
+	public static CoinCounts getCoinCounts() {
+		return COUNTS;
 	}
 
 	@Override

@@ -1,9 +1,22 @@
 import java.util.Scanner;
+import javax.swing.SwingUtilities;
 
 public class Demo {
 	private static final Scanner keyboard = new Scanner(System.in);
 
 	public static void main(String[] args) {
+
+		CoinCounts counts = Coin.getCoinCounts();
+		TotalCoinsDashboard totalDash = new TotalCoinsDashboard(counts);
+		QuarterCounterDashboard quarterDash = new QuarterCounterDashboard(counts);
+		SwingUtilities.invokeLater(totalDash);
+		SwingUtilities.invokeLater(quarterDash);
+		try {
+			Thread.sleep(1000); // wait for dashboards to be ready
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
 		blankLines();
 		System.out.println("Welcome to the Coin Demo!");
 
