@@ -31,8 +31,9 @@ jobs:
 
       - name: Run JUnit Platform Console
         run: |
-          # scan build/classes for any @Test methods
           java -jar lib/junit-platform-console-standalone-1.11.0.jar \
+            execute \
             --class-path build/classes \
             --scan-class-path \
             --reports-dir test-reports
+              
