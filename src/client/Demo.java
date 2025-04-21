@@ -18,7 +18,7 @@ public class Demo {
 
 	private static void fixedDemo() {
 		blankLines();
-		System.out.println("=== Fixed Demo ===");
+		System.out.println("===Metallurgy Demo ===");
 		System.out.println("Penny (Cupro-Nickel): " + new Penny(new CuproNickel()));
 		System.out.println("Nickel (Cupro-Nickel):       " + new Nickel(new CuproNickel()));
 		System.out.println("Dime (Cupro-Nickel):         " + new Dime(new CuproNickel()));
